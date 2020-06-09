@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "cd backend && NODE_ENV=production node server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --cwd frontend && cd frontend && yarn build && rm -r ../backend/client/build && mv ./build ../backend/client/build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --cwd backend && yarn install --cwd frontend && cd frontend && yarn build && rm -r ../backend/client/build && mv ./build ../backend/client/build"
   },
   "dependencies": {
     "antd": "^4.0.2",
