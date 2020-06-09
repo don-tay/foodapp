@@ -1,4 +1,13 @@
-{
+{ 
+  "name": "foodtruck-app",
+  "version": "1.0.0",
+  "engines": {
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "start": "cd backend && yarn start",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --cwd frontend && cd frontend && yarn build && rm -r ../backend/client/build && mv ./build ../backend/client/build"
+  },
   "dependencies": {
     "antd": "^4.0.2",
     "morgan": "^1.9.1",
