@@ -1,0 +1,8 @@
+{
+  "user": "plawzzjttsherc",
+  "host": "ec2-52-202-185-87.compute-1.amazonaws.com",
+  "database": "d1jdqtga7b7tl2",
+  "password": "8039824dab7a20930c15656d5901a4014dd8b5ff60fd360d87228c5b56a4d308",
+  "port": 5432,
+  "ssl": true
+}
