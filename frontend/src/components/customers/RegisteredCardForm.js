@@ -27,7 +27,7 @@ function RegisteredCardForm() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/customers/${uid}`)
+      .get(`/api/customers/${uid}`)
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
@@ -52,7 +52,7 @@ function RegisteredCardForm() {
     setLoading(true);
 
     axios
-      .put(`http://localhost:5000/api/customers/${uid}`, {
+      .put(`/api/customers/${uid}`, {
         cardnum: cardnum,
       })
       .then((response) => {

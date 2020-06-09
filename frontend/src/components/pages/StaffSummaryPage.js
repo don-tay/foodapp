@@ -62,7 +62,7 @@ function StaffSummaryPage() {
   const [nameLoading, setNameLoading] = useState(true);
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/api/staffs/${uid}`)
+    Axios.get(`/api/staffs/${uid}`)
       .then((response) => {
         console.log(response);
         let { rname } = response.data;
@@ -81,7 +81,7 @@ function StaffSummaryPage() {
     let starttime = getUnixTime(monthA);
     let endtime = getUnixTime(monthB);
     console.log("Start unix time", starttime);
-    const url = `http://localhost:5000/api/restaurants/${restaurantName}/summary?starttime=${starttime}&endtime=${endtime}`;
+    const url = `/api/restaurants/${restaurantName}/summary?starttime=${starttime}&endtime=${endtime}`;
     Axios.get(url)
       .then((response) => {
         let { rsummary } = response.data;

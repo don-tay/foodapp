@@ -46,27 +46,27 @@ function LoginPage(props) {
     setLoading(true);
     switch (newRole) {
       case CUSTOMER:
-        postRequest = axios.post("http://localhost:5000/api/customers", {
+        postRequest = axios.post("/api/customers", {
           name: name,
           email: newEmail,
         });
         break;
       case STAFF:
-        postRequest = axios.post("http://localhost:5000/api/staffs", {
+        postRequest = axios.post("/api/staffs", {
           name: name,
           email: newEmail,
           rname: restaurant,
         });
         break;
       case RIDER:
-        postRequest = axios.post("http://localhost:5000/api/riders", {
+        postRequest = axios.post("/api/riders", {
           name: name,
           email: newEmail,
           isFT: riderType,
         });
         break;
       case MANAGER:
-        postRequest = axios.post("http://localhost:5000/api/managers", {
+        postRequest = axios.post("/api/managers", {
           name: name,
           email: newEmail,
         });

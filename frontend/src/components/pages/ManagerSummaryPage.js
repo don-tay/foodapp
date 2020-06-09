@@ -28,7 +28,7 @@ function ManagerSummaryPage() {
   const [viewOrders, setViewOrderOn] = useState(false);
   const [viewRiders, setViewRiderOn] = useState(false);
 
-  const url = `http://localhost:5000/api/managers/summary/general`
+  const url = `/api/managers/summary/general`
   useEffect(() => {
     Axios.get(url)
       .then(response => {
@@ -46,7 +46,7 @@ function ManagerSummaryPage() {
     setLoading1(true);
     let cusstarttime = getUnixTime(monthA);
     let cusendtime = getUnixTime(monthB);
-    const url = `http://localhost:5000/api/managers/summary/customers?starttime=${cusstarttime}&endtime=${cusendtime}`;
+    const url = `/api/managers/summary/customers?starttime=${cusstarttime}&endtime=${cusendtime}`;
     Axios.get(url)
       .then(response => {
         let { fdssummary } = response.data;
@@ -65,7 +65,7 @@ function ManagerSummaryPage() {
     setLoading1(true);
     let starttime = getUnixTime(monthA);
     let endtime = getUnixTime(monthB);
-    const url1 = `http://localhost:5000/api/managers/summary/riders?starttime=${starttime}&endtime=${endtime}`;
+    const url1 = `/api/managers/summary/riders?starttime=${starttime}&endtime=${endtime}`;
     Axios.get(url1)
       .then(response => {
         console.log(response.date);

@@ -117,7 +117,7 @@ function HistoryPage() {
   const { uid } = useContext(UserContext);
 
   useEffect(() => {
-    let url = `http://localhost:5000/api/customers/${uid}/orders`;
+    let url = `/api/customers/${uid}/orders`;
     Axios.get(url)
       .then((response) => {
         console.log("response", response.data);

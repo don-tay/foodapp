@@ -14,7 +14,7 @@ function CheckoutButton(props) {
   const history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:5000/api/customers/${uid}`)
+    Axios.get(`/api/customers/${uid}`)
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
@@ -33,7 +33,7 @@ function CheckoutButton(props) {
     let orderTime = getUnixTime(new Date());
 
     //Get list of riders working at this time
-    const riderUrl = `http://localhost:5000/api/riders/order?time=${orderTime}`;
+    const riderUrl = `/api/riders/order?time=${orderTime}`;
     Axios.get(riderUrl)
       .then((response) => {
         let riderIds = response.data.rid;
@@ -56,7 +56,7 @@ function CheckoutButton(props) {
           }
         }
         console.log(parsedItems);
-        const url = `http://localhost:5000/api/orders`;
+        const url = `/api/orders`;
         Axios.post(url, {
           location: `'${props.deliveryInfo.location}'`,
           dfee: `'${props.deliveryInfo.deliveryFee}'`,

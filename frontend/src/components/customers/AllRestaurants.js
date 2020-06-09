@@ -12,7 +12,7 @@ function AllRestaurants(props) {
   const { uid } = useContext(UserContext);
 
   useEffect(() => {
-    const url = `http://localhost:5000/api/restaurants`;
+    const url = `/api/restaurants`;
     Axios.get(url)
       .then((response) => {
         console.log("response", response.data);
@@ -26,7 +26,7 @@ function AllRestaurants(props) {
   }, []);
 
   const getDeliveryLocations = () => {
-    const url = `http://localhost:5000/api/customers/${uid}/locations`;
+    const url = `/api/customers/${uid}/locations`;
     Axios.get(url)
       .then((response) => {
         console.log("Fetch recent delivery locations", response.data);

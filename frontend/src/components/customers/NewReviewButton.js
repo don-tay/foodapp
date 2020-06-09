@@ -8,7 +8,7 @@ function NewReviewButton(props) {
   const [review, setReview] = useState(props.review);
 
   const postOrEditReview = (reviewInfo) => {
-    const url = `http://localhost:5000/api/customers/review`;
+    const url = `/api/customers/review`;
     console.log(reviewInfo);
     Axios.post(url, reviewInfo)
       .then((response) => {

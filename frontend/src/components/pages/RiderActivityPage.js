@@ -39,7 +39,7 @@ function RiderActivityPage() {
   const { uid } = useContext(UserContext);
 
   const refreshOrders = () => {
-    const url = `http://localhost:5000/api/riders/${uid}/orders`;
+    const url = `/api/riders/${uid}/orders`;
     Axios.get(url)
       .then((response) => {
         console.log(`Fetch all orders for rider ${uid}`, response.data);

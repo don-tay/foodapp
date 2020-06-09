@@ -3,7 +3,7 @@ import Axios from "axios";
 
 function SummaryData(setRiderSummary, setSalary, setSchedule, setOrders, setRatings, id) {
     const [data, setData] = useState([]);
-    const url1 = `http://localhost:5000/api/riders/${id}/summary`
+    const url1 = `/api/riders/${id}/summary`
     useEffect(() => {
         Axios.get(url1)
             .then(response => {
@@ -15,7 +15,7 @@ function SummaryData(setRiderSummary, setSalary, setSchedule, setOrders, setRati
             })
     }, [])
 
-    const url2 = `http://localhost:5000/api/riders/${id}/salary`
+    const url2 = `/api/riders/${id}/salary`
     useEffect(() => {
         Axios.get(url2)
             .then(response => {
@@ -27,7 +27,7 @@ function SummaryData(setRiderSummary, setSalary, setSchedule, setOrders, setRati
             })
     }, [])
 
-    const url3 = `http://localhost:5000/api/riders/${id}/schedule`
+    const url3 = `/api/riders/${id}/schedule`
     useEffect(() => {
         Axios.get(url3)
             .then(response => {
@@ -39,7 +39,7 @@ function SummaryData(setRiderSummary, setSalary, setSchedule, setOrders, setRati
             })
     }, [])
 
-    const url4 = `http://localhost:5000/api/riders/${id}/orders`
+    const url4 = `/api/riders/${id}/orders`
     useEffect(() => {
         Axios.get(url4)
             .then(response => {
@@ -51,7 +51,7 @@ function SummaryData(setRiderSummary, setSalary, setSchedule, setOrders, setRati
             })
     }, [])
 
-    const url5 = `http://localhost:5000/api/riders/${id}/ratings`
+    const url5 = `/api/riders/${id}/ratings`
     useEffect(() => {
         Axios.get(url5)
             .then(response => {

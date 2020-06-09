@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 function SavePromotion(value1, value2, value3, setCreateError, setCreateSuccessfully) {
-    const url = `http://localhost:5000/api/promotions`
+    const url = `/api/promotions`
     return Axios.post(url, {
         sdatetime: value1,
         edatetime: value2,

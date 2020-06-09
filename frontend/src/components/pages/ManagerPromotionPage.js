@@ -28,7 +28,7 @@ function ManagerPromotionPage() {
     };
 
     const period = getPeriod(selectedMonths);
-    const url = `http://localhost:5000/api/promotions`
+    const url = `/api/promotions`
     useEffect(() => {
         Axios.get(url)
             .then(response => {

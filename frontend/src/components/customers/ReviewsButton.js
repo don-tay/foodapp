@@ -104,7 +104,7 @@ function ReviewsButton(props) {
   }, []);
 
   const getReviews = () => {
-    const url = `http://localhost:5000/api/restaurants/'${props.rname}'/reviews`;
+    const url = `/api/restaurants/'${props.rname}'/reviews`;
     Axios.get(url)
       .then((response) => {
         console.log(`Get reviews for ${props.rname}`, response.data);

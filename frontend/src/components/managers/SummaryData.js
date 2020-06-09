@@ -10,7 +10,7 @@ import {
 import Axios from "axios";
 
 function SummaryData(setLoading, setOverviewSummary) {
-    // const url1 = `http://localhost:5000/api/customers`
+    // const url1 = `/api/customers`
     // useEffect(() => {
     //     Axios.get(url1)
     //         .then(response => {
@@ -22,7 +22,7 @@ function SummaryData(setLoading, setOverviewSummary) {
     //         })
     // }, [])
 
-    // const url2 = `http://localhost:5000/api/orders`
+    // const url2 = `/api/orders`
     // useEffect(() => {
     //     Axios.get(url2)
     //         .then(response => {
@@ -34,7 +34,7 @@ function SummaryData(setLoading, setOverviewSummary) {
     //         })
     // }, [])
 
-    // const url3 = `http://localhost:5000/api/riders`
+    // const url3 = `/api/riders`
     // useEffect(() => {
     //     Axios.get(url3)
     //         .then(response => {
@@ -47,7 +47,7 @@ function SummaryData(setLoading, setOverviewSummary) {
     // }, [])
     // setLoading(true);
 
-    const url = `http://localhost:5000/api/managers/summary/general`
+    const url = `/api/managers/summary/general`
     useEffect(() => {
         Axios.get(url)
             .then(response => {
@@ -61,7 +61,7 @@ function SummaryData(setLoading, setOverviewSummary) {
             })
     }, [])
 
-    // const url5 = `http://localhost:5000/api/managers/summary/orders/filtered?start=${start}&end=${end}`
+    // const url5 = `/api/managers/summary/orders/filtered?start=${start}&end=${end}`
     // useEffect(() => {
     //     Axios.get(url5)
     //         .then(response => {
@@ -73,7 +73,7 @@ function SummaryData(setLoading, setOverviewSummary) {
     //         })
     // }, [])
 
-    // const url6 = `http://localhost:5000/api/managers/summary/orders`
+    // const url6 = `/api/managers/summary/orders`
     // useEffect(() => {
     //     Axios.get(url6)
     //         .then(response => {

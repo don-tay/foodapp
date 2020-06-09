@@ -55,7 +55,7 @@ function RestaurantOrder(props) {
   const end = getUnixTime(addHours(startOfToday(), 22)); //10pm today
 
   useEffect(() => {
-    const url = `http://localhost:5000/api/restaurants/'${rname}'?start=${start}&end=${end}`;
+    const url = `/api/restaurants/'${rname}'?start=${start}&end=${end}`;
     Axios.get(url)
       .then((response) => {
         let processedData = [];

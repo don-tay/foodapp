@@ -28,7 +28,7 @@ function EditableAccountForm() {
     setLoading(true);
 
     axios
-      .put(`http://localhost:5000/api/users/${uid}`, {
+      .put(`/api/users/${uid}`, {
         name: newName,
         email: newEmail,
       })

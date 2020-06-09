@@ -5,7 +5,7 @@
 // function getCustomers() {
 //     const [customersData, setCustomersData] = useState([]);
 
-//     const url = `http://localhost:5000/api/promotions`
+//     const url = `/api/promotions`
 //     useEffect(() => {
 //         Axios.get(url)
 //             .then(response => {

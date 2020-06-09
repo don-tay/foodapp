@@ -84,12 +84,12 @@ function RestaurantMenu() {
 
   const fetchData = () => {
     setLoading(true);
-    const url = `http://localhost:5000/api/staffs/${uid}`;
+    const url = `/api/staffs/${uid}`;
     Axios.get(url)
       .then((response) => {
         let rname = response.data.rname;
         setRestaurantName(rname);
-        const url2 = `http://localhost:5000/api/restaurants/'${rname}'/menu`;
+        const url2 = `/api/restaurants/'${rname}'/menu`;
         Axios.get(url2)
           .then((response) => {
             let minamt = response.data.minamt;
@@ -110,7 +110,7 @@ function RestaurantMenu() {
   // const deleteFoodItem = (index) => {
   const deleteFoodItem = (name) => {
     console.log("Delete this item:", name);
-    const url = `http://localhost:5000/api/restaurants/'${restaurantName}'/menu`;
+    const url = `/api/restaurants/'${restaurantName}'/menu`;
     Axios.delete(url, { data: { fname: `'${name}'` } })
       .then((response) => {
         console.log("Deleted item from menu:", response.data);
@@ -125,7 +125,7 @@ function RestaurantMenu() {
   };
 
   const createFoodItem = (foodItem) => {
-    const url = `http://localhost:5000/api/restaurants/'${restaurantName}'/menu`;
+    const url = `/api/restaurants/'${restaurantName}'/menu`;
     console.log(foodItem);
     Axios.post(url, foodItem)
       .then((response) => {
@@ -162,7 +162,7 @@ function RestaurantMenu() {
       minamt: minAmt,
     };
 
-    const url = `http://localhost:5000/api/restaurants/'${restaurantName}'/menu`;
+    const url = `/api/restaurants/'${restaurantName}'/menu`;
     Axios.put(url, updatedData)
       .then((response) => {
         console.log(response.data);

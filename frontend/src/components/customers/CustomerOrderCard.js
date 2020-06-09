@@ -27,7 +27,7 @@ function CustomerOrderCard(props) {
 
   const handleRate = (e, { rating, MaxRating }) => {
     console.log("Rate clicked:", rating);
-    const url = `http://localhost:5000/api/customers/rating`;
+    const url = `/api/customers/rating`;
     Axios.post(url, {
       rating: `${rating}`,
       oid: `${order.oid}`,

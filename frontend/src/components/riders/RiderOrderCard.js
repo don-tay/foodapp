@@ -29,7 +29,7 @@ function RiderOrderCard(props) {
   const deliverToCustomerCompleted = endDatetimeToCustomer != null;
 
   const updateOrderTimestamp = (type) => {
-    const url = `http://localhost:5000/api/orders/${props.order.oid}`
+    const url = `/api/orders/${props.order.oid}`
     let timestamp = getUnixTime(new Date());
     Axios.put(url, {
       timestamp: `${timestamp}`,
