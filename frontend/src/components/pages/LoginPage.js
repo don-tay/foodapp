@@ -25,7 +25,7 @@ function LoginPage(props) {
     console.log("logging in");
     setLoading(true);
     axios
-      .get(`http://localhost:5000/api/users/login?email=${email}`)
+      .get(`/api/users/login?email=${email}`)
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
