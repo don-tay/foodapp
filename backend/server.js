@@ -2,6 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
 const cors = require('cors');
 const path = require('path');
 
@@ -14,10 +18,27 @@ dotenv.config({ path: './config/config.env' });
 const app = express();
 
 app.use(bodyParser.json());
+
+// Set security headers
+app.use(helmet());
+
+// Prevent XSS attacks
+app.use(xss());
+
+// Rate limiting
+const limiter = rateLimit({
+    windowMs: 10 * 60 * 1000, // 10 minutes
+    max: 100
+});
+
+app.use(limiter);
+
+// Prevent http param pollution
+app.use(hpp());
+
 // enable CORS
-
+app.options('*', cors());
 app.use(cors());
-
 
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
